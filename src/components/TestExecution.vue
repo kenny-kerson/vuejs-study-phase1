@@ -1,7 +1,7 @@
 <template>
     <div>
         <TestScenario></TestScenario>
-        <TestCase></TestCase>
+        <TestCase :select-ts-id="this.$store.state.selectTsId"></TestCase>
     </div>
 </template>
 

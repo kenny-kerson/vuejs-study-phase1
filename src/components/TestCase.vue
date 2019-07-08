@@ -8,7 +8,7 @@
             <th>시나리오ID</th>
             </thead>
             <tbody>
-            <tr v-for="tc in tcList"
+            <tr v-for="tc in filteredTcList"
                 :key="tc.tcId"
             >
                 <td>{{tc.tcId}}</td>
@@ -21,8 +21,6 @@
 </template>
 
 <script>
-    // import eventBus from '../EventBus'
-
     export default {
         name: "TestCase",
         data() {
@@ -31,17 +29,24 @@
                 ]
             }
         },
+        props: [
+            "selectTsId"
+        ],
         methods: {
-            filterTcList( tsId ) {
-                this.tcList = this.$store.state.originTcList.filter( function(row) {
-                    return row.tsId == tsId
-                })
+        },
+        computed: {
+            filteredTcList() {
+                if ( this.selectTsId != "" ) {
+                    return this.$store.state.originTcList.filter( (row) => {
+                        return row.tsId == this.selectTsId
+                    })
+                } else {
+                    return [...this.$store.state.originTcList]
+                }
             }
         },
         mounted() {
             this.tcList = [...this.$store.state.originTcList]
-
-            this.eventBus.$on("clickTestScenario", this.filterTcList )
         }
     }
 </script>

@@ -14,5 +14,6 @@ export default {
         {date: "20190613", time: "020000", tsId: "ts1"},
         {date: "20190613", time: "030000", tsId: "ts2"},
     ],
-    currentComponent: "TestExecution"
+    currentComponent: "TestExecution",
+    selectTsId: ""
 }

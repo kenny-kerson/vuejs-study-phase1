@@ -11,14 +11,29 @@
                 :key="ts.tsId"
                 @click="clickTestScenario(ts.tsId)"
             >
+
                 <td>{{ts.tsId}}</td>
                 <td>{{ts.tsName}}</td>
             </tr>
-             }
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<script>
+    import Constant from '../Constant'
+    export default {
+        name: "TestScenario",
+        data: function() {
+            return {
+            }
         },
         methods: {
-            clickTestScenario( tsId ) {
-                this.eventBus.$emit("clickTestScenario", tsId)
+            clickTestScenario: function(tsId) {
+                // this.eventBus.$emit("clickTestScenario", tsId)
+                this.$store.commit( Constant.SELECT_TS_ID, {
+                    selectTsId: tsId
+                })
             }
         }
     }
