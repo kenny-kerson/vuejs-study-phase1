@@ -21,6 +21,8 @@
 </template>
 
 <script>
+    import Constant from "@/Constant";
+
     export default {
         name: "TestCase",
         data() {
@@ -36,9 +38,9 @@
         },
         computed: {
             filteredTcList() {
-                if ( this.selectTsId != "" ) {
+                if ( this.selectTsId !== "" ) {
                     return this.$store.state.originTcList.filter( (row) => {
-                        return row.tsId == this.selectTsId
+                        return row.tsId === this.selectTsId
                     })
                 } else {
                     return [...this.$store.state.originTcList]
@@ -46,7 +48,7 @@
             }
         },
         mounted() {
-            this.tcList = [...this.$store.state.originTcList]
+            this.$store.dispatch( Constant.GET_TC_LIST )
         }
     }
 </script>

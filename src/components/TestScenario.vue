@@ -35,6 +35,9 @@
                     selectTsId: tsId
                 })
             }
+        },
+        mounted() {
+            this.$store.dispatch( Constant.GET_TS_LIST )
         }
     }
 </script>
