@@ -10,6 +10,7 @@
             <tbody>
             <tr v-for="tc in filteredTcList"
                 :key="tc.tcId"
+                @click="callTestCaseDetail(tc.tcId)"
             >
                 <td>{{tc.tcId}}</td>
                 <td>{{tc.tcName}}</td>
@@ -35,6 +36,13 @@
             "selectTsId"
         ],
         methods: {
+            callTestCaseDetail( id ) {
+                this.$router.push({
+                    name: "TestCaseDetail" ,
+                    params: {
+                        tcId: id
+                    }})
+            }
         },
         computed: {
             filteredTcList() {

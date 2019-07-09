@@ -9,7 +9,8 @@
     <section>
 <!--      <TestExecution v-if="currentComponent == 'TestExecution'"></TestExecution>-->
 <!--      <TestHistory v-if="currentComponent == 'TestHistory'"></TestHistory>-->
-      <component :is="this.$store.state.currentComponent"></component>
+<!--      <component :is="this.$store.state.currentComponent"></component>-->
+        <router-view></router-view>
     </section>
     <footer>
       copyright

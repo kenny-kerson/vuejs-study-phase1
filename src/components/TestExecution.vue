@@ -2,6 +2,7 @@
     <div>
         <TestScenario></TestScenario>
         <TestCase :select-ts-id="this.$store.state.selectTsId"></TestCase>
+        <router-view></router-view>
     </div>
 </template>
 

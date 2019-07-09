@@ -14,12 +14,14 @@
             clickTestExecution() {
                 console.log("clickTestExecution")
 
-                this.$store.commit( Constant.CHANGE_CURRENT_COMPONENT, {currentComponent: "TestExecution"})
+                // this.$store.commit( Constant.CHANGE_CURRENT_COMPONENT, {currentComponent: "TestExecution"})
+                this.$router.push({name: "TestExecution"})
             },
             clickTestHistory() {
                 console.log("clickTestHistory")
 
-                this.$store.commit( Constant.CHANGE_CURRENT_COMPONENT, {currentComponent: "TestHistory"})
+                // this.$store.commit( Constant.CHANGE_CURRENT_COMPONENT, {currentComponent: "TestHistory"})
+                this.$router.push({name: "TestHistory"})
             }
         }
     }
