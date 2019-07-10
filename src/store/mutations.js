@@ -19,4 +19,12 @@ export default {
     [Constant.SET_TH_LIST]: (state, payload) => {
         state.thList = payload.thList
     },
+
+    [Constant.CHANGE_IS_LOADING]: (state, payload) => {
+        state.isLoading = payload.isLoading
+    },
+
+    [Constant.CHANGE_IS_COLLAPSE]: (state, payload) => {
+        state.isCollapse = !state.isCollapse
+    },
 }

@@ -1,23 +1,32 @@
 <template>
     <div>
-        <h3>테스트 케이스</h3>
-        <table>
-            <thead>
-            <th>케이스ID</th>
-            <th>케이스명</th>
-            <th>시나리오ID</th>
-            </thead>
-            <tbody>
-            <tr v-for="tc in filteredTcList"
-                :key="tc.tcId"
-                @click="callTestCaseDetail(tc.tcId)"
+        <el-container>
+            <h3 align="center"><i class="el-icon-d-arrow-right"></i> 테스트 케이스</h3>
+        </el-container>
+        <el-container>
+            <el-table
+                :data="filteredTcList"
+                stripe
+                style="width: 100%"
+                @row-click="callTestCaseDetail"
             >
-                <td>{{tc.tcId}}</td>
-                <td>{{tc.tcName}}</td>
-                <td>{{tc.tsId}}</td>
-            </tr>
-            </tbody>
-        </table>
+                <el-table-column
+                        prop="tcId"
+                        label="케이스ID"
+                        width="180">
+                </el-table-column>
+                <el-table-column
+                        prop="tcName"
+                        label="케이스명"
+                        width="180">
+                </el-table-column>
+                <el-table-column
+                        prop="tsId"
+                        label="시나리오ID"
+                        width="180">
+                </el-table-column>
+            </el-table>
+        </el-container>
     </div>
 </template>
 

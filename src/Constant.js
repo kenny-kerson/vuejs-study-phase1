@@ -5,6 +5,8 @@ export default {
     SET_TS_LIST: "setTsList",
     SET_TC_LIST: "setTcList",
     SET_TH_LIST: "setThList",
+    CHANGE_IS_LOADING: "changeIsLoading",
+    CHANGE_IS_COLLAPSE: "chnageIsCollapse",
 
     // Action만 존재
     GET_TS_LIST: "getTsList",

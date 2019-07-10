@@ -1,22 +1,27 @@
 <template>
     <div>
-        <h3>테스트 시나리오</h3>
-        <table>
-            <thead>
-            <th>시나리오ID</th>
-            <th>시나리오명</th>
-            </thead>
-            <tbody>
-            <tr v-for="ts in this.$store.state.tsList"
-                :key="ts.tsId"
-                @click="clickTestScenario(ts.tsId)"
+        <el-container>
+            <h3 align="center"><i class="el-icon-d-arrow-right"></i> 테스트 시나리오</h3>
+        </el-container>
+        <el-container>
+            <el-table
+                    :data="this.$store.state.tsList"
+                    stripe
+                    style="width: 100%"
+                    @row-click="clickTestScenario"
             >
-
-                <td>{{ts.tsId}}</td>
-                <td>{{ts.tsName}}</td>
-            </tr>
-            </tbody>
-        </table>
+                <el-table-column
+                        prop="tsId"
+                        label="시나리오ID"
+                        width="180">
+                </el-table-column>
+                <el-table-column
+                        prop="tsName"
+                        label="시나리오명"
+                        width="180">
+                </el-table-column>
+            </el-table>
+        </el-container>
     </div>
 </template>
 
@@ -29,10 +34,10 @@
             }
         },
         methods: {
-            clickTestScenario: function(tsId) {
-                // this.eventBus.$emit("clickTestScenario", tsId)
+            clickTestScenario: function(params) {
+
                 this.$store.commit( Constant.SELECT_TS_ID, {
-                    selectTsId: tsId
+                    selectTsId: params.tsId
                 })
             }
         },
