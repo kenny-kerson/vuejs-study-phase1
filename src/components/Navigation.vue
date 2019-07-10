@@ -43,9 +43,10 @@
             //     this.$router.push({name: "TestHistory"})
             // },
             handleSelect(key, keyPath) {
-                if ( 1 === key) {
+                console.log( key )
+                if ( 1 == key) {
                     this.$router.push({name: "TestExecution"})
-                } else if ( 2 === key) {
+                } else if ( 2 == key) {
                     this.$router.push({name: "TestHistory"})
                 }
             },
