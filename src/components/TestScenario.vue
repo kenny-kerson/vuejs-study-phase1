@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <h3>테스트 시나리오</h3>
-        <table>
-            <thead>
-            <th>시나리오ID</th>
-            <th>시나리오명</th>
+    <div class="container">
+        <h4>+ 테스트 시나리오</h4>
+        <table class="table">
+            <thead class="thead-light">
+                <th scope="col">시나리오ID</th>
+                <th scope="col">시나리오명</th>
             </thead>
             <tbody>
             <tr v-for="ts in this.$store.state.tsList"

@@ -1,18 +1,17 @@
 <template>
-  <div>
-    <header>
-      <h1>UAT Automation</h1>
-    </header>
+  <div class="container">
     <nav>
-      <Navigation></Navigation>
+        <p></p>
+        <Navigation></Navigation>
     </nav>
     <section>
 <!--      <TestExecution v-if="currentComponent == 'TestExecution'"></TestExecution>-->
 <!--      <TestHistory v-if="currentComponent == 'TestHistory'"></TestHistory>-->
-      <component :is="this.$store.state.currentComponent"></component>
+        <p></p>
+        <component :is="this.$store.state.currentComponent"></component>
     </section>
     <footer>
-      copyright
+        <div class="container">copyright 2019 @kenny</div>
     </footer>
   </div>
 </template>
