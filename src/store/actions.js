@@ -45,4 +45,31 @@ export default {
                 console.log( "__KENNY__ GET_TS_LIST 호출오류발생!!")
             })
     },
+
+    [Constant.LOGIN]: (store, payload) => {
+        store.commit(Constant.CHANGE_IS_LOADING, {
+            isLoading: true
+        })
+
+        axios.post( Config.LOCAL_SERVER_BASE_URL + "/simple/login", {
+            id: payload.id,
+            password: payload.password,
+        })
+            .then(response => {
+                console.log( response )
+
+                store.commit(Constant.CHANGE_IS_LOADING, {
+                    isLoading: false
+                })
+
+                payload.router.push({name: "TestExecution"})
+            })
+            .catch( error => {
+                console.log( error )
+
+                store.commit(Constant.CHANGE_IS_LOADING, {
+                    isLoading: false
+                })
+            })
+    }
 }

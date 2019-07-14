@@ -1,42 +1,15 @@
 <template>
   <div>
-    <header>
-      <h1>UAT Automation</h1>
-    </header>
-    <nav>
-      <Navigation></Navigation>
-    </nav>
-    <section>
-<!--      <TestExecution v-if="currentComponent == 'TestExecution'"></TestExecution>-->
-<!--      <TestHistory v-if="currentComponent == 'TestHistory'"></TestHistory>-->
-      <component :is="this.$store.state.currentComponent"></component>
-    </section>
-    <footer>
-      copyright
-    </footer>
+      <router-view></router-view>
+      <Loading v-if="this.$store.state.isLoading"></Loading>
   </div>
 </template>
 
 <script>
-  // import eventBus from './EventBus'
-
-  import TestExecution from './components/TestExecution'
-  import TestHistory from './components/TestHistory'
-  import Navigation from './components/Navigation'
-
+  import Loading from "./components/Loading";
   export default {
     name: "App",
-    components: {
-        TestExecution,
-        TestHistory,
-        Navigation
-    },
-    data() {
-      return {
-      }
-    },
-    methods: {
-    }
+      components: {Loading},
   }
 </script>
 

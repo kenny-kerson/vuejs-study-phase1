@@ -5,6 +5,6 @@ export default {
     ],
     thList: [
     ],
-    currentComponent: "TestExecution",
-    selectTsId: ""
+    selectTsId: "",
+    isLoading: false
 }
