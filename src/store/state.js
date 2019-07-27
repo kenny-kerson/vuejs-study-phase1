@@ -6,5 +6,6 @@ export default {
     thList: [
     ],
     selectTsId: "",
-    isLoading: false
+    isLoading: false,
+    isCollapse: false
 }

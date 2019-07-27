@@ -1,10 +1,14 @@
 <template>
     <div>
-        <h3>> 테스트 시나리오</h3>
+        <h3>
+            <i class="el-icon-check"></i> 테스트 시나리오
+        </h3>
         <el-table
                 :data="this.$store.state.tsList"
                 stripe
-                style="width: 100%">
+                style="width: 100%"
+                @row-click="clickTestScenario"
+        >
             <el-table-column
                     prop="tsId"
                     label="시나리오ID"
@@ -28,10 +32,10 @@
             }
         },
         methods: {
-            clickTestScenario: function(tsId) {
+            clickTestScenario: function(row) {
                 // this.eventBus.$emit("clickTestScenario", tsId)
                 this.$store.commit( Constant.SELECT_TS_ID, {
-                    selectTsId: tsId
+                    selectTsId: row.tsId
                 })
             }
         },

@@ -1,6 +1,8 @@
 <template>
     <div>
-        <h3>> 테스트 실행내역</h3>
+        <h3>
+            <i class="el-icon-check"></i> 테스트 실행내역
+        </h3>
         <el-table
                 :data="this.$store.state.thList"
                 stripe

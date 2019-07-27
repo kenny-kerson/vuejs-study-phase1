@@ -1,9 +1,7 @@
 <template>
     <div>
         <el-container>
-            <el-aside>
-                <AsideMenu></AsideMenu>
-            </el-aside>
+            <AsideMenu></AsideMenu>
             <el-container>
                 <el-header>
                     <Navigation></Navigation>
@@ -12,7 +10,7 @@
                     <router-view></router-view>
                 </el-main>
                 <el-footer>
-                    copyright
+                    copyright 2019 @kakaobank kenny
                 </el-footer>
             </el-container>
         </el-container>

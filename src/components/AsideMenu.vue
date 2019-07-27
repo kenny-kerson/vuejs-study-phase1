@@ -1,24 +1,19 @@
 <template>
     <div>
-        <el-menu
-                default-active="2"
-                class="el-menu-vertical-demo"
-                @open="handleOpen"
-                @close="handleClose"
-                background-color="#545c64"
-                text-color="#fff"
-                active-text-color="#ffd04b">
+        <el-menu default-active="2" class="el-menu-vertical-demo"
+                 :collapse="this.$store.state.isCollapse"
+        >
             <el-menu-item index="1">
-                <i class="el-icon-menu"></i>
-                <span>테스트 실행</span>
+                <i class="el-icon-caret-right"></i>
+                <span slot="title">테스트 실행</span>
             </el-menu-item>
             <el-menu-item index="2">
-                <i class="el-icon-menu"></i>
-                <span>실행내역</span>
+                <i class="el-icon-tickets"></i>
+                <span slot="title">실행내역</span>
             </el-menu-item>
-            <el-menu-item index="3">
-                <i class="el-icon-menu"></i>
-                <span>로그아웃</span>
+            <el-menu-item index="3" @click="logout" >
+                <i class="el-icon-d-arrow-left"></i>
+                <span slot="title">로그아웃</span>
             </el-menu-item>
         </el-menu>
     </div>
@@ -26,7 +21,14 @@
 
 <script>
     export default {
-        name: "AsideMenu"
+        name: "AsideMenu",
+        methods: {
+            logout() {
+                this.$router.push({
+                    name: "Login"
+                })
+            }
+        }
     }
 </script>
 

@@ -18,5 +18,9 @@ export default {
 
     [Constant.CHANGE_IS_LOADING]: (state, payload) => {
         state.isLoading = payload.isLoading
+    },
+
+    [Constant.CHANGE_IS_COLLAPSE]: (state, payload) => {
+        state.isCollapse = payload.isCollapse
     }
 }

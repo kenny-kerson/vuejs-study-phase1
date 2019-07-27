@@ -8,13 +8,16 @@
                 background-color="#545c64"
                 text-color="#fff"
                 active-text-color="#ffd04b">
-            <el-menu-item index="1">테스트 실행</el-menu-item>
-            <el-menu-item index="2">실행내역</el-menu-item>
+            <el-menu-item index="1"><i class="el-icon-more"></i></el-menu-item>
+            <el-menu-item index="2">테스트 실행</el-menu-item>
+            <el-menu-item index="3">실행내역</el-menu-item>
         </el-menu>
     </div>
 </template>
 
 <script>
+    import Constant from "../Constant";
+
     export default {
         name: "Navigation",
         data() {
@@ -27,8 +30,12 @@
                 console.log(key, keyPath);
 
                 if ( "1" == key ) {
+                    this.$store.commit( Constant.CHANGE_IS_COLLAPSE, {
+                        isCollapse: !this.$store.state.isCollapse
+                    })
+                } else if ( "2" == key ) {
                     this.clickTestExecution()
-                } else {
+                } else if ( "3" == key ) {
                     this.clickTestHistory()
                 }
 
