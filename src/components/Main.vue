@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="container">
         <header>
-            <h1>UAT Automation</h1>
+            <h1 align="center">UAT Automation</h1>
         </header>
         <nav>
             <Navigation></Navigation>

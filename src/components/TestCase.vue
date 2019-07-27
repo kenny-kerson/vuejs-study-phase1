@@ -1,11 +1,11 @@
 <template>
-    <div>
+    <div class="container">
         <h3>테스트 케이스</h3>
-        <table>
+        <table class="table table-striped">
             <thead>
-            <th>케이스ID</th>
-            <th>케이스명</th>
-            <th>시나리오ID</th>
+                <th scope="col">케이스ID</th>
+                <th scope="col">케이스명</th>
+                <th scope="col">시나리오ID</th>
             </thead>
             <tbody>
             <tr v-for="tc in filteredTcList"

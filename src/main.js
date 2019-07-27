@@ -5,6 +5,9 @@ import eventBus from './EventBus'
 import store from './store'
 import router from './router/router'
 
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 Vue.config.productionTip = false
 Vue.prototype.eventBus = eventBus
 
