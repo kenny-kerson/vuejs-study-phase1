@@ -1,22 +1,26 @@
 <template>
     <div>
-        <h3>테스트 케이스</h3>
-        <table>
-            <thead>
-            <th>케이스ID</th>
-            <th>케이스명</th>
-            <th>시나리오ID</th>
-            </thead>
-            <tbody>
-            <tr v-for="tc in filteredTcList"
-                :key="tc.tcId"
-            >
-                <td>{{tc.tcId}}</td>
-                <td>{{tc.tcName}}</td>
-                <td>{{tc.tsId}}</td>
-            </tr>
-            </tbody>
-        </table>
+        <h3>> 테스트 케이스</h3>
+        <el-table
+                :data="filteredTcList"
+                stripe
+                style="width: 100%">
+            <el-table-column
+                    prop="tcId"
+                    label="케이스ID"
+                    width="180">
+            </el-table-column>
+            <el-table-column
+                    prop="tcName"
+                    label="케이스명"
+                    width="180">
+            </el-table-column>
+            <el-table-column
+                    prop="tsId"
+                    label="시나리오ID"
+                    width="180">
+            </el-table-column>
+        </el-table>
     </div>
 </template>
 

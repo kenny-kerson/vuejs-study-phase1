@@ -2,12 +2,12 @@
     <div>
         <h4>로그인</h4>
         <p>
-            ID : <input :value="id"
+            ID : <input v-model="id"
                         @keyup.enter="login"/>
         </p>
         <p>
             PASSWORD : <input type="password"
-                              :value="password"
+                              v-model="password"
                               @keyup.enter="login"/>
         </p>
         <p>

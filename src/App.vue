@@ -9,7 +9,9 @@
   import Loading from "./components/Loading";
   export default {
     name: "App",
-      components: {Loading},
+    components: {
+        Loading
+    }
   }
 </script>
 
